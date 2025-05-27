@@ -10,4 +10,9 @@ public class Player
         Name = name;
         Position = 1;
     }
+
+    public void MoveTo(int newPosition)
+    {
+        Position = newPosition;
+    }
 }

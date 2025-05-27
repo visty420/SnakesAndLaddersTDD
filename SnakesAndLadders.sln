@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakesAndLadders.Core", "Sn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakesAndLadders.tests", "SnakesAndLadders.tests\SnakesAndLadders.tests.csproj", "{D56AF975-1970-4D63-A1FE-9C362B825571}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakesAndLadders.ConsoleUI", "SnakesAndLadders.ConsoleUI\SnakesAndLadders.ConsoleUI.csproj", "{B4FCF816-3A1D-40C1-8613-D9CC9124D846}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{D56AF975-1970-4D63-A1FE-9C362B825571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D56AF975-1970-4D63-A1FE-9C362B825571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D56AF975-1970-4D63-A1FE-9C362B825571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4FCF816-3A1D-40C1-8613-D9CC9124D846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4FCF816-3A1D-40C1-8613-D9CC9124D846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4FCF816-3A1D-40C1-8613-D9CC9124D846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4FCF816-3A1D-40C1-8613-D9CC9124D846}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

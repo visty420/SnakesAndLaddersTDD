@@ -15,8 +15,10 @@ public class GameEngine
 
     private int _currentPlayerIndex = 0;
 
-    public bool IsGameOver { get; private set;}
-    public Player? Winner { get; private set;}
+    public bool IsGameOver { get; private set; }
+    public Player? Winner { get; private set; }
+
+    public Player CurrentPlayer => _players[_currentPlayerIndex];
 
     public GameEngine(IEnumerable<string> playerNames, GameBoard board, Dice dice)
     {
@@ -43,6 +45,10 @@ public class GameEngine
             Winner = currentPlayer;
             return;
         }
+        _currentPlayerIndex = (_currentPlayerIndex + 1) % _players.Count;
+    }
+    public void AdvanceTurn()
+    {
         _currentPlayerIndex = (_currentPlayerIndex + 1) % _players.Count;
     }
 }

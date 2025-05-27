@@ -10,7 +10,7 @@ public class Dice
     {
         _random = new Random();
     }
-    public int Roll()
+    public virtual int Roll()
     {
         return _random.Next(1, 7);
     }

@@ -1,0 +1,1 @@
+xterm -fa 'Monospace' -fs 12 -hold -e "dotnet run --project SnakesAndLadders.ConsoleUI"

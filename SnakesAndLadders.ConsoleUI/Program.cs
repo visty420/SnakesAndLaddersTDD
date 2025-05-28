@@ -31,6 +31,8 @@ while (playing)
     var dice = new Dice();
     var engine = new GameEngine(players, board, dice);
 
+    var renderer = new BoardRenderer(board, engine.Players.ToList());
+
     Console.WriteLine("\nStarting game!\nPress any key to roll :).");
     Console.ReadKey(true);
     Console.ReadLine();
@@ -42,6 +44,12 @@ while (playing)
         Console.WriteLine("\nPress any key to roll the dice!");
         Console.ReadKey();
 
+        Console.Clear();
+        Console.WriteLine(renderer.Renderer());
+        Console.WriteLine($"\n{currentPlayer.Name}'s turn. Current position: {currentPlayer.Position}");
+        Console.WriteLine("Press enter to roll the dice...");
+        Console.ReadLine();
+        
         var roll = dice.Roll();
         Console.WriteLine($"{currentPlayer.Name} rolled a {roll}.");
 

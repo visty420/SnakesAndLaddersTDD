@@ -31,6 +31,10 @@ public class GameBoard
             target = _snakes[target];
         }
         player.MoveTo(target);
-         Console.WriteLine($"Moved to {target}");
+        Console.WriteLine($"Moved to {target}");
     }
+
+    public bool HasSnakeAtSquare(int square) => _snakes.ContainsKey(square);
+    public bool HasLadderAtSquare(int square) => _ladders.ContainsKey(square);
+    
 }

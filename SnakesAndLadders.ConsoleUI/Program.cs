@@ -30,7 +30,6 @@ while (playing)
     var board = new GameBoard(snakes, ladders);
     var dice = new Dice();
     var engine = new GameEngine(players, board, dice);
-
     var renderer = new BoardRenderer(board, engine.Players.ToList());
 
     Console.WriteLine("\nStarting game!\nPress any key to roll :).");

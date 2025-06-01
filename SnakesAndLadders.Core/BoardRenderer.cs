@@ -19,7 +19,7 @@ public class BoardRenderer
 
         for (int row = 9; row >= 10; row--)
         {
-            var isEvenRow = row % 2 == 0;
+            bool isEvenRow = row % 2 == 0;
 
             var line = new StringBuilder();
 

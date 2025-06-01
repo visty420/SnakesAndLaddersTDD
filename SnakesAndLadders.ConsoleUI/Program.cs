@@ -31,6 +31,7 @@ while (playing)
     var dice = new Dice();
     var engine = new GameEngine(players, board, dice);
     var renderer = new BoardRenderer(board, engine.Players.ToList());
+    var logger = new GameLogger();
 
     Console.WriteLine("\nStarting game!\nPress any key to roll :).");
     Console.ReadKey(true);
@@ -48,13 +49,16 @@ while (playing)
         Console.WriteLine($"\n{currentPlayer.Name}'s turn. Current position: {currentPlayer.Position}");
         Console.WriteLine("Press enter to roll the dice...");
         Console.ReadLine();
-        
+
         var roll = dice.Roll();
         Console.WriteLine($"{currentPlayer.Name} rolled a {roll}.");
 
         int before = currentPlayer.Position;
         board.MovePlayer(currentPlayer, roll);
         int after = currentPlayer.Position;
+        bool hitSnake = board.HasSnakeAtSquare(before + roll);
+        bool hitLadder = board.HasLadderAtSquare(before + roll);
+        logger.LogMove(currentPlayer.Name, roll, before, after, hitSnake, hitLadder);
 
         if (after > before)
         {
@@ -78,5 +82,9 @@ while (playing)
     }
     Console.WriteLine("\nPlay again? (y/n): ");
     playing = Console.ReadLine()?.ToLower() == "y";
-
+    Console.WriteLine("\n=== Game Log ===");
+    foreach (var entry in logger.GetLog())
+    {
+        Console.WriteLine(entry);
+    }
 }
